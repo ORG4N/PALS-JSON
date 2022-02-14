@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>PALS JSON DEMO</title>
+</head>
+
+
+<body>
+
+    <div>
+        <input type="text" class="form-control" placeholder="Forename" id="forename">
+    </div>
+
+    <div>
+        <input type="text" class="form-control" placeholder="Surname" id="surname">
+    </div>
+
+    <div>
+        <input type="text" class="form-control" placeholder="Age" id="age">
+    </div>
+
+    <div class="d-flex justify-content-center" style="padding:15px">
+        <button type="button" style="width:40%" onclick="buttonSubmit()">Submit user</button>
+    </div>
+
+    <div id="data">
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    fetchUsers();
+
+    function buttonSubmit() {
+
+        // When the button is pressed, take all input field values and store them into an object called user
+        var user = {
+            "forename": (document.getElementById("forename").value),
+            "surname": (document.getElementById("surname").value),
+            "age": (document.getElementById("age").value)
+        };
+
+        // Call the postUsers function with the object as an arugment
+        postUsers(user);
+
+    }
+
+    // Send a HTTP request to POST the user object - a POST request is essentially a CREATE action
+    // Our controller describes how the data is handled
+    async function postUsers(data) {
+        const url = "https://localhost:44329/api/users";
+
+        try {
+            await fetch(url, {
+                method: "POST",
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+
+        } catch (e) {
+            throw "Failed to post";
+        }
+    }
+
+    // Send a HTTP request to GET the users and then iterate through all objects to write them to the screen.
+    // Our controller describes how the data is handld
+    async function fetchUsers() {
+        const url = "https://localhost:44329/api/users";
+        const raw = await fetch(url);
+        const data = await raw.json();
+
+        // data is an array of JSON objects
+        data.forEach(({ forename, surname, age }) => {
+
+            var newDiv = document.createElement("div");                 // Create a new div variable
+            newDiv.innerHTML = forename + " " + surname + " " + age;    // Set the div text to our object's data
+            document.getElementById("data").appendChild(newDiv);        // Apply div to the page
+
+
+        });
+    }
+
+</script>
+
+
+

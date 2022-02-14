@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "6GbX0R2GZ05pUa/hmXzdmj6XYenBMywf+SoLCdD3vkhub7aQw3W8TYpkbmg1NqoNU2kogh0PQ0HA+KRTTK9jSg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\datgu\\source\\repos\\JsonShowcase\\JsonShowcase.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\datgu\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
