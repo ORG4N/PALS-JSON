@@ -41,10 +41,12 @@
         var user = {
             "forename": (document.getElementById("forename").value),
             "surname": (document.getElementById("surname").value),
-            "age": (document.getElementById("age").value)
+            "age": parseInt(document.getElementById("age").value)
         };
 
         // Call the postUsers function with the object as an arugment
+
+        console.log(user);
         postUsers(user);
 
     }
@@ -73,7 +75,7 @@
         const raw = await fetch(url);
         const data = await raw.json();
 
-        // data is an array of JSON objects
+         // data is an array of JSON objects
         data.forEach(({ forename, surname, age }) => {
 
             var newDiv = document.createElement("div");                 // Create a new div variable
