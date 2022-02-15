@@ -15,6 +15,6 @@ You should find that most code within this repository has been commented. Howeve
 ## Video Explanations
 Please note that the code shown in the original PALS session may be slightly out-of-date. 
 
-Original PALS session :
+Original PALS session : https://plymouth.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=82a77822-d323-4c86-aa95-ae3700ea83ff
 
-Podcast:
+Podcast tutorial:https://youtu.be/32XFgm-h9Vc
